@@ -85,6 +85,7 @@ int main() {
 ```
 
 Output:
+
 <img width="325" height="156" alt="image" src="https://github.com/user-attachments/assets/4effb892-8328-4d93-becf-6671249a2a75" />
 
 Result: Thus, the program is verified successfully
@@ -136,6 +137,7 @@ int main() {
 ```
 
 Output:
+
 <img width="555" height="118" alt="image" src="https://github.com/user-attachments/assets/769e47e0-1ce7-40c5-871b-8d82f1e1020e" />
 
 
@@ -261,6 +263,7 @@ int main() {
 ```
 
 Output:
+
 <img width="450" height="293" alt="image" src="https://github.com/user-attachments/assets/a8642fd2-8113-44b0-a493-e441aa047775" />
 
 Result: Thus, the program is verified successfully
