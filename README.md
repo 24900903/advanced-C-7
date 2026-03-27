@@ -41,7 +41,7 @@ int main() {
 
 Output:
 
-
+<img width="351" height="245" alt="image" src="https://github.com/user-attachments/assets/c31f49f0-a5e3-4edb-ab66-c83d5f218558" />
 
 Result: Thus, the program is verified successfully.
 
@@ -57,12 +57,35 @@ Call the add function with n as an argument.
 Print the result returned by the add function.
 Return 0
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+struct numbers {
+    int a, b;
+};
+
+struct numbers add(struct numbers n) {
+    struct numbers result;
+    result.a = n.a + n.b;
+    return result;
+}
+
+int main() {
+    struct numbers n, sum;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &n.a, &n.b);
+
+    sum = add(n);
+
+    printf("Sum: %d\n", sum.a);
+
+    return 0;
+}
+```
 
 Output:
-
-//paste your output here
+<img width="325" height="156" alt="image" src="https://github.com/user-attachments/assets/4effb892-8328-4d93-becf-6671249a2a75" />
 
 Result: Thus, the program is verified successfully
 
@@ -86,12 +109,35 @@ Print a message indicating that the file has been closed.
 End the main function.
 Return 0 to indicate successful program execution.
 Program:
+```
+#include <stdio.h>
 
-//type your code here
+int main() {
+    FILE *p;
+    char name[100];
+
+    printf("Enter the file name: ");
+    scanf("%s", name);
+
+    p = fopen(name, "w");
+
+    if (p == NULL) {
+        printf("Error creating file.\n");
+        return 1;
+    }
+
+    printf("File '%s' created successfully.\n", name);
+
+    fclose(p);
+    printf("File closed successfully.\n");
+
+    return 0;
+}
+```
 
 Output:
+<img width="555" height="118" alt="image" src="https://github.com/user-attachments/assets/769e47e0-1ce7-40c5-871b-8d82f1e1020e" />
 
-//paste your output here
 
 Result: Thus, the program is verified successfully
 
@@ -111,12 +157,48 @@ Print a message indicating that data has been added successfully.
 End the main function.
 Return 0 to indicate successful program execution.
 Program:
+```
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-//type your code here
+int main() {
+    char filename[100], text[1000];
+    FILE *file;
+
+    printf("Enter filename: ");
+    scanf("%99s", filename);
+
+    file = fopen(filename, "w+");
+    if (!file) {
+        perror("File error");
+        return 1;
+    }
+
+    printf("Enter text: ");
+    fgets(text, sizeof(text), stdin);
+    text[strcspn(text, "\n")] = 0;
+    fprintf(file, "%s\n", text);
+
+    fprintf(file, "Appended text.\n");
+
+    rewind(file);
+    printf("\nFile contents:\n");
+    char ch;
+    while ((ch = fgetc(file)) != EOF)
+        putchar(ch);
+    printf("\n");
+
+    fclose(file);
+    return 0;
+}
+```
+
 
 Output:
 
-//paste your output here
+<img width="365" height="185" alt="image" src="https://github.com/user-attachments/assets/a9dfe15c-af4e-4af0-ae5d-82a77a0702b5" />
+
 
 Result: Thus, the program is verified successfully
 
@@ -151,11 +233,34 @@ Algorithm: 1.Input the number of subjects.
 13.End the program by returning 0.
 
 Program:
+```
+#include <stdio.h>
+struct Student {
+    char name[50];
+    int roll;
+    float marks;
+};
 
-//type your code here
+int main() {
+    struct Student s;
+    printf("Enter student name: ");
+    fgets(s.name, sizeof(s.name), stdin);
+
+    printf("Enter roll number: ");
+    scanf("%d", &s.roll);
+
+    printf("Enter marks: ");
+    scanf("%f", &s.marks);
+    printf("\n--- Student Details ---\n");
+    printf("Name       : %s", s.name);
+    printf("Roll No.   : %d\n", s.roll);
+    printf("Marks      : %.2f\n", s.marks);
+
+    return 0;
+}
+```
 
 Output:
-
-//paste your output here
+<img width="450" height="293" alt="image" src="https://github.com/user-attachments/assets/a8642fd2-8113-44b0-a493-e441aa047775" />
 
 Result: Thus, the program is verified successfully
